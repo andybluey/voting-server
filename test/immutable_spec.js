@@ -19,8 +19,6 @@ describe('immutability', () => {
 
   });
 
-
-
   describe('Lists', () => {
 
     function addMovie(currentState, movie) {
@@ -40,11 +38,12 @@ describe('immutability', () => {
         'Trainspotting',
         '28 Days Later'
       ));
-
     });
+
   });
 
   describe('trees', () => {
+
     function addMovie(currentState, movie) {
       return currentState.update('movies', movies => movies.push(movie));
     }
@@ -62,7 +61,6 @@ describe('immutability', () => {
           'Sunshine'
         )
       }));
-
       expect(state).to.equal(Map({
         movies: List.of(
           'Trainspotting',
@@ -72,5 +70,5 @@ describe('immutability', () => {
     });
 
   });
-  
+
 });
